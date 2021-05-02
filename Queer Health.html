@@ -1,0 +1,230 @@
+<tw-storydata name="Queer Health" startnode="1" creator="Twine" creator-version="2.2.1" ifid="64248BFF-A2CD-4CF3-8F80-64CE3B44A714" zoom="1" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+background-color: white;
+color: black;
+font-family: OCR A Std, monospace;
+font-size: 100%;
+}
+a {
+color: 
+#0800ff;
+}
+a:hover {
+color: #ff00d9;
+ text-decoration: none;
+ }
+}
+input[type=text], textarea {
+   min-width: 20em;
+}
+input {
+   padding: 2px 3px;
+}
+input, textarea:focus {
+   background: #FFFFFF;
+   color: white;
+   background-color: #000000;
+   border: 1px solid #444;
+   padding: #FFFFFF;
+}
+input, textarea {
+   background: #FFFFFF;
+   color: white;
+   background-color: #FFFFFF;
+   border: 1px solid #444;
+   padding: #FFFFFF;
+}
+button, input, textarea {
+   outline: 0;
+}
+input[type=text] {
+ background-color: white;
+ color: blue;
+ font-family: courier;
+}
+#ui-bar {
+	background-color: black;
+ 	color:#00fc43;
+ 	font-family: courier;
+ 	font-size: 100%;
+}
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  font-family: Verdana, sans-serif;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.redtext {
+color: #c90a0a;
+}
+.orangetext {
+color: #de950d;
+}
+.blacktext {
+color: #000000;
+}
+.pinktext {
+color: #e683c6;
+}
+.yellowtext {
+color: #c4c45a;
+}
+.greentext {
+color: #2ebf52;
+}
+.blur {
+font-size: 20px;
+filter: blur(5px);
+-webkit-filter: blur(5px);
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
+
+</script><tw-passagedata pid="1" name="Start" tags="" position="801,105" size="100,100">You’re a senior at [[PS.37|p1.s2]] and prom is rapidly approaching. Before we get into the trials and tribulations of prom . . . who are you?
+
+A Queer Prom Night
+written and programmed for 11.127
+Version 0.0 (2 May 2021)
+Written in Twine, SugarCube 2.21.0
+
+What&#39;s your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
+
+What are your pronouns?
+&lt;&lt;radiobutton &quot;$pr&quot; &quot;he&quot;&gt;&gt; He/him
+&lt;&lt;radiobutton &quot;$pr&quot; &quot;she&quot;&gt;&gt; She/her
+&lt;&lt;radiobutton &quot;$pr&quot; &quot;they&quot;&gt;&gt; They/them
+
+[[So, what&#39;s this high school like?|p1.s2]]
+[[Do I have any friends?|p1.s3]]
+[[I&#39;m interested exclusively in the romantic options.|p1.s4]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="32,32" size="100,100">&lt;&lt;if $pr is &quot;he&quot;&gt;&gt;
+	&lt;&lt;set $first to &quot;he&quot;&gt;&gt;
+	&lt;&lt;set $second to &quot;him&quot;&gt;&gt;
+	&lt;&lt;set $third to &quot;his&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $pr is &quot;she&quot;&gt;&gt;
+	&lt;&lt;set $first to &quot;she&quot;&gt;&gt;
+	&lt;&lt;set $second to &quot;her&quot;&gt;&gt;
+	&lt;&lt;set $third to &quot;hers&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $pr is &quot;they&quot;&gt;&gt;
+	&lt;&lt;set $first to &quot;they&quot;&gt;&gt;
+	&lt;&lt;set $second to &quot;them&quot;&gt;&gt;
+	&lt;&lt;set $third to &quot;theirs&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+//&lt;span class=&quot;pinktext&quot;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="3" name="text_mock_up" tags="" position="1363,272" size="100,100">
+&lt;&lt;timed 16s&gt;&gt;
+[[(15) unread messages]]
+[[Go do something else.]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="(15) unread messages" tags="" position="1288,422" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="5" name="Go do something else." tags="" position="1438,422" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="6" name="p1.s2" tags="" position="647,101" size="100,100">Public School 37 is probably not that different from any other school, you think. [[You&#39;re a senior|Start]] in seven classes and you&#39;ve already committed to college, which is essentially like being in zero classes.
+
+You and [[your friends|p1.s3]] are excited to start college, new jobs, and most importantly, prom. </tw-passagedata><tw-passagedata pid="7" name="p1.s3" tags="" position="647,251" size="100,100">You hang out with a lot of different people at school, but you&#39;re mostly friends with . . .
+
+Emmerson, they are going to college for library science and are basically a walking Wikipedia of information. They know a lot about everything and are happy to let you know it.
+
+Nina, who is starting a tattoo apprenticeship after graduation, she&#39;s essentially the best artist in the whole school. Maybe you&#39;ll get a tattoo from her in the future.
+
+Carlos, who has shown you approximately 57 different suits he&#39;s considering to buy for [[prom|p1.s4]] and they are starting to blend together. You&#39;re not super concerned with the difference between midnight and charcoal, but he sure is.
+
+</tw-passagedata><tw-passagedata pid="8" name="p1.s4" tags="" position="801,255" size="100,100">You&#39;ve got a few new crushes on your classmates . . .
+
+Zachary, he’s in the school’s marching band and you both play in a rock band outside of school. Only Zach would insist the trumpet is an alt-rock instrument.
+
+Victoria, you have English with her and you’ve always thought she’s pretty cute. You both are pretty into poetry, specifically Sylvia Plath.
+
+Quinn, you’ve known them since middle school and meet up weekly to play in a D&amp;D group. You tend to share a lot of inside jokes with them when you’re together in Chemistry.
+
+Who do you want to ask to go to prom with you?
+&lt;&lt;radiobutton &quot;$prom&quot; &quot;Zachary&quot;&gt;&gt; Zachary
+&lt;&lt;radiobutton &quot;$prom&quot; &quot;Victoria&quot;&gt;&gt; Victoria
+&lt;&lt;radiobutton &quot;$prom&quot; &quot;Quinn&quot;&gt;&gt; Quinn
+
+[[Better go work on that promposal. Maybe your friends have some good ideas.|p2.s1]]
+
+
+</tw-passagedata><tw-passagedata pid="9" name="p2.s1" tags="" position="801,405" size="100,100">Unread messages
+
+[[Emmerson|em_1]]
+[[Carlos|car_1]]
+[[Nina|nina_1]]</tw-passagedata><tw-passagedata pid="10" name="em_1" tags="" position="598,525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="car_1" tags="" position="908,517" size="100,100">&lt;p align=&quot;center&quot;&gt;Emmerson ;)&lt;/p&gt;
+&lt;&lt;timed 3s&gt;&gt;whats up $name?&lt;&lt;/timed&gt;&gt;
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 6s&gt;&gt;&lt;p align=&quot;right&quot;&gt;so . . . im thinking about asking $prom to prom&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="12" name="nina_1" tags="" position="766,555" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="Untitled Passage" tags="" position="1065,69.5" size="100,100">&lt;span class=&quot;blur&quot;&gt;Blurry Text&lt;/span&gt;
+</tw-passagedata></tw-storydata>
