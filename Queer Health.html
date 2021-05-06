@@ -154,21 +154,25 @@ filter: blur(5px);
 
 
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">/*UIBar.destroy();*/
 
 
 
-</script><tw-passagedata pid="1" name="Start" tags="" position="801,105" size="100,100">You’re a senior at [[PS.37|p1.s2]] and prom is rapidly approaching. Before we get into the trials and tribulations of prom . . . who are you?
 
-A Queer Prom Night
+</script><tw-passagedata pid="1" name="Start" tags="" position="805,107" size="100,100">You’re a senior at PS.37 and prom is rapidly approaching. Before we get into the trials and tribulations of prom . . . who are you?
+
+&#39;&#39;A Queer Prom Night&#39;&#39;
 written and programmed for 11.127
 Version 0.0 (2 May 2021)
 Written in Twine, SugarCube 2.21.0
 
+&#39;&#39;//Chapter 1: Backstory//&#39;&#39;
+&lt;&lt;set $name to &quot;Player&quot;&gt;&gt;
 What&#39;s your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
 
 What are your pronouns?
-&lt;&lt;radiobutton &quot;$pr&quot; &quot;he&quot;&gt;&gt; He/him
+&lt;&lt;radiobutton &quot;$pr&quot; &quot;he&quot; checked&gt;&gt; He/him
 &lt;&lt;radiobutton &quot;$pr&quot; &quot;she&quot;&gt;&gt; She/her
 &lt;&lt;radiobutton &quot;$pr&quot; &quot;they&quot;&gt;&gt; They/them
 
@@ -190,11 +194,17 @@ What are your pronouns?
 	&lt;&lt;set $third to &quot;theirs&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-//&lt;span class=&quot;pinktext&quot;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="3" name="text_mock_up" tags="" position="1363,272" size="100,100">
+//&lt;span class=&quot;pinktext&quot;&gt;&lt;/span&gt;
+
+&lt;&lt;set $prom to &quot;bitch&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="text_mock_up" tags="" position="1363,272" size="100,100">
 &lt;&lt;timed 16s&gt;&gt;
 [[(15) unread messages]]
 [[Go do something else.]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="(15) unread messages" tags="" position="1288,422" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="5" name="Go do something else." tags="" position="1438,422" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="6" name="p1.s2" tags="" position="647,101" size="100,100">Public School 37 is probably not that different from any other school, you think. [[You&#39;re a senior|Start]] in seven classes and you&#39;ve already committed to college, which is essentially like being in zero classes.
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="(15) unread messages" tags="" position="1288,422" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="5" name="Go do something else." tags="" position="1438,422" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="6" name="p1.s2" tags="" position="647,101" size="100,100">Public School 37 is probably not that different from any other school, you think. You&#39;re a senior in seven classes and you&#39;ve already committed to college, which is essentially like being in zero classes.
+
+The school is well-known for its performance in football and theater productions. The principal has always touted the “rich diversity” of its student population, though there have been grumblings among the students about how performative his public outreach usually is. Regardless, student culture and community is strong, especially if you participate in any of the numerous clubs and student orgs that gather together after school.
+
+In anticipation of prom season, the students are experiencing varying levels of nervousness, excitement, and maybe even fear. It has always been one of the biggest events of the school year, celebrating those who are graduating, inviting a local DJ to play remixes of overplayed radio hits, and commending the couple that will be crowned prom king and queen.
 
 You and [[your friends|p1.s3]] are excited to start college, new jobs, and most importantly, prom. </tw-passagedata><tw-passagedata pid="7" name="p1.s3" tags="" position="647,251" size="100,100">You hang out with a lot of different people at school, but you&#39;re mostly friends with . . .
 
@@ -213,18 +223,225 @@ Victoria, you have English with her and you’ve always thought she’s pretty c
 Quinn, you’ve known them since middle school and meet up weekly to play in a D&amp;D group. You tend to share a lot of inside jokes with them when you’re together in Chemistry.
 
 Who do you want to ask to go to prom with you?
-&lt;&lt;radiobutton &quot;$prom&quot; &quot;Zachary&quot;&gt;&gt; Zachary
+&lt;&lt;radiobutton &quot;$prom&quot; &quot;Zachary&quot; checked&gt;&gt; Zachary
 &lt;&lt;radiobutton &quot;$prom&quot; &quot;Victoria&quot;&gt;&gt; Victoria
 &lt;&lt;radiobutton &quot;$prom&quot; &quot;Quinn&quot;&gt;&gt; Quinn
 
 [[Better go work on that promposal. Maybe your friends have some good ideas.|p2.s1]]
 
 
-</tw-passagedata><tw-passagedata pid="9" name="p2.s1" tags="" position="801,405" size="100,100">Unread messages
+</tw-passagedata><tw-passagedata pid="9" name="p2.s1" tags="" position="801,405" size="100,100">&#39;&#39;//Chapter 2: Plotting a Promposal//&#39;&#39;
 
-[[Emmerson|em_1]]
-[[Carlos|car_1]]
-[[Nina|nina_1]]</tw-passagedata><tw-passagedata pid="10" name="em_1" tags="" position="598,525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="car_1" tags="" position="908,517" size="100,100">&lt;p align=&quot;center&quot;&gt;Emmerson ;)&lt;/p&gt;
-&lt;&lt;timed 3s&gt;&gt;whats up $name?&lt;&lt;/timed&gt;&gt;
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 6s&gt;&gt;&lt;p align=&quot;right&quot;&gt;so . . . im thinking about asking $prom to prom&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;</tw-passagedata><tw-passagedata pid="12" name="nina_1" tags="" position="766,555" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="Untitled Passage" tags="" position="1065,69.5" size="100,100">&lt;span class=&quot;blur&quot;&gt;Blurry Text&lt;/span&gt;
-</tw-passagedata></tw-storydata>
+Promposal season is in full swing. Every other day, you see balloons, cakes, and cheesy promposal signs like “I cannoli ask one person, but can it pastably be with you?” 
+
+Maybe it’s about time you ask your date?
+
+Ding! You get a text from your friend Carlos after a long night of homework.
+
+&#39;&#39;(3) Unread messages&#39;&#39;
+[[Carlos 👀 (3)|car_1]]
+</tw-passagedata><tw-passagedata pid="10" name="em_1" tags="" position="14,215" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="car_1" tags="" position="908,517" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
+Omg everyone is posting their prom dates and promposals on insta.
+
+&lt;&lt;timed 3s &gt;&gt;Im gonna ask Henry tomorrow and I need you to take pictures for me!&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 6s&gt;&gt;Im making a cake and getting some balloons that say prom on them.&lt;&lt;/timed&gt;&gt;
+
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 9s&gt;&gt;&lt;p align=&quot;right&quot;&gt;haha okay okay i’ll take pictures! I love that idea he is going to absolutely love it.&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 12s&gt;&gt;thanks i knew i could count on you. So who are you going to ask???&lt;&lt;/timed&gt;&gt;
+
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 15s&gt;&gt;&lt;p align=&quot;right&quot;&gt; i think i’m going to ask $prom.&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 18s&gt;&gt;how do you want to ask $prom?! 💘💘💘&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 21s&gt;&gt;
+Well, that is a good question. Dramatic Disney inspired ask or keep it lowkey?
+[[im thinking during lunch ill bring my speaker, a sign, and some chocolates. I want to make it a spectacle!|p2.s3]]
+[[invite a few friends over for dinner and ask the waiter to bring out dessert that says “Prom?”|p2.s4]]
+[[alone after school, ill ask when no one is around|p2.s5]]
+&lt;&lt;/timed&gt;&gt;
+
+
+
+</tw-passagedata><tw-passagedata pid="12" name="nina_1" tags="" position="28,325" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="Untitled Passage" tags="" position="1065,69" size="100,100">&lt;span class=&quot;blur&quot;&gt;Blurry Text&lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="14" name="p2.s3" tags="" position="749,667" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;im thinking during lunch ill bring my speaker, a sign, and some chocolates. I want to make it a spectacle!&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 3s &gt;&gt;aaaaaa how exciting! let me know [[how it goes!|p2.s3b]]&lt;&lt;/timed&gt;&gt;
+
+
+
+
+</tw-passagedata><tw-passagedata pid="15" name="p2.s4" tags="" position="903,675" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;invite a few friends over for dinner and ask the waiter to bring out dessert that says “Prom?”&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 3s &gt;&gt;aaaaaa how exciting! let me know [[how it goes!|p2.s4b]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="p2.s5" tags="" position="1041,667" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;alone after school, ill ask $prom when no one is around&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 3s &gt;&gt;aaaaaa how exciting! let me know [[how it goes!|p2.s5b]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="p2.s3b" tags="" position="749,817" size="100,100">It has been one week since your conversation with Carlos, and the plans are finally all set. You’re sitting at the lunch table in the very center of the room with 3 of your friends, clutching a sign saying “Come dance at prom with me!” while “Stereo Hearts” by Gym Class Heroes is blasting on the speaker. You can feel beads of sweat dripping from the back of your neck in &lt;&lt;linkappend &quot;anticipation...&quot; t8n&gt;&gt;
+
+$prom finally ambles in, and all of your friends start performing an extremely poorly choreographed dance. $prom starts laughing but then joins the group in dance and says “yes!” 
+
+[[&#39;&#39;Prom Date Status: Mission Success 🎉&#39;&#39;|p2.s6]] 
+
+&lt;&lt;/linkappend&gt;&gt;
+</tw-passagedata><tw-passagedata pid="18" name="p2.s5b" tags="" position="1041,817" size="100,100">You catch $prom after school by the lockers. Most of the students have already filtered out of the hallway. 
+
+$name: Hey $prom . . . I was wondering if I could ask you something
+
+$prom: Hey! What’s up? 
+
+$name: I know prom season is in full swing right now. We’ve been hanging out a good bit recently and I thought it would be super fun . . . you know . . . if we went together! 
+
+$prom: oh yeah! I actually don’t have a date yet so I’d love to go with you.
+
+//Success? 
+
+Well, let&#39;s take that as a yes.//
+
+[[&#39;&#39;Prom Date Status: Mission Success 🎉&#39;&#39;|p2.s6]] </tw-passagedata><tw-passagedata pid="19" name="p2.s4b" tags="" position="903,825" size="100,100">You invited your friends and $prom to eat at your local Italian restaurant. You ask to go to the bathroom, but instead have a secret conversation with the waiter. When the lava cake comes out, your $prom’s favorite, “Prom?” is beautifully written in chocolate syrup. $prom smiles and gives you a big hug, nodding yes. Success!!! You’ve got yourself a prom date!
+
+[[&#39;&#39;Prom Date Status: Mission Success 🎉&#39;&#39;|p2.s6]] 
+
+</tw-passagedata><tw-passagedata pid="20" name="p2.s6" tags="" position="905,965" size="100,100">You have successfully asked $prom to prom. You spend the next few weeks finishing up your assignments, getting a prom outfit, and making preparations for the big day. Next thing you know, [[it’s the day of prom!|p3.s1]] </tw-passagedata><tw-passagedata pid="21" name="p3.s1" tags="" position="905,1115" size="100,100">//&#39;&#39;Chapter 3: Pre-Game AKA LET&#39;S PARTY!&#39;&#39;//
+
+You’ve gathered with all of your friends at Emmerson&#39;s house in preparation for prom. Everyone’s complimenting how good you look in your . . .
+
+[[snazzy tux. 🤵|p3.s2]]
+[[flowy dress. 👗|p3.s2]]
+[[charming dress shirt and suspenders combo. 👚|p3.s2]] 
+[[statement piece pantsuit. ✨|p3.s2]]
+[[iconic fitted dress. 👠|p3.s2]]
+</tw-passagedata><tw-passagedata pid="22" name="p3.s2" tags="" position="904,1243" size="100,100">And you //do// look great!
+
+You all had chosen Emmerson’s house as the place to meet because their parents were going to be out-of-town this weekend. Your parents had already done the work to take group photos of you and your friends and your dates before leaving you to have your fun with your friends. 
+
+As everyone settles down in the living room, the excited tension is palpable in the room, rising as everyone makes idle small talk to pass the time. A release is introduced in the form of alcohol when Nina saunters into the room carrying several bottles of beer. 
+
+“Let’s get a buzz going before we head to that buzzkill prom!” Nina proclaims as she walks around the room and hands bottles off to the others.
+
+As they approach you, you feel the pull to . . .
+
+take the offered bottle and sip conservatively from it. The yeasty flavor unpleasantly fills your mouth, but you feel the buzz encourage you to open up [[and party with everyone else in the room.|p3.s3]]
+
+politely decline the offered bottle. You’re intrigued, but don’t think now’s the time or place to try out alcohol. [[Maybe when you’re in college.|p3.s3]] 
+
+take the offered bottle and [[chug it.|p3.s4]] You indulge in the drinking games that offer opportunities to try hard liquor. Despite Nina’s best efforts, you lose track of your consumption.
+</tw-passagedata><tw-passagedata pid="23" name="ps.s3" tags="" position="8,863" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="24" name="p3.s3" tags="" position="829,1393" size="100,100">Now that everyone’s been warmed up and gotten a chance to really know each other, the flow of conversation comes easier between your friends and their dates. Nina checks the time and realizes the time for prom has come. People file out of Emmerson’s house and pile into their designated cars. Carlos is your car&#39;s designated driver and he blasts a throwback playlist the whole car ride. 
+
+[[Time to head over to your schools’s gym!|p4.s1]]</tw-passagedata><tw-passagedata pid="25" name="p3.s4" tags="" position="979,1393" size="100,100">You find yourself seated on the living room couch and thoroughly drunk. You’re not completely gone, but you hear Carlos comment that there’s no way you and several others will be let into prom in your current state. 
+
+$prom suggests an alternative that their older brother did when he was feeling jaded about prom: Buying a ton of fast food and driving out to the local beach to have a romantic group picnic. [[Eating helps with the drunkenness anyways, right?|p4.s2]] 
+</tw-passagedata><tw-passagedata pid="26" name="p4.s1" tags="" position="829,1543" size="100,100">//&#39;&#39;Chapter 4: Prom Night!&#39;&#39;//
+
+PLACEHOLDER :)
+
+you meet grayson
+
+you talk with others about heterosexual norms surrounding prom
+
+[[move on until this is coded lol|p5.s1]]</tw-passagedata><tw-passagedata pid="27" name="p5.s1" tags="" position="897,1705" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
+Hey, did you and $prom go anywhere after the dance?
+
+//Oh, it&#39;s Grayson. [[Let&#39;s see what&#39;s up.|p5.s2]]//
+</tw-passagedata><tw-passagedata pid="28" name="p4.s2" tags="" position="979,1543" size="100,100">//&#39;&#39;Chapter 4: Prom (Beach?) Night!&#39;&#39;//
+
+PLACEHOLDER :)
+
+grayson is there
+
+you talk with others about heterosexual norms surrounding prom
+
+[[move on until this is coded lol|p5.s1]]</tw-passagedata><tw-passagedata pid="29" name="p5.s2" tags="" position="897,1855" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
+Hey, did you and $prom go anywhere after the dance?
+
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 3s&gt;&gt;&lt;p align=&quot;right&quot;&gt;$prom and I are chilling at my house. what&#39;s up?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 6s&gt;&gt;Andre&#39;s parents aren&#39;t home so we went back to their house. I think we’re going to . . . you know . . .&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 9s&gt;&gt;
+//Oh, dang. That&#39;s a little different than what Grayson told you at prom. What do you want to say?//
+
+[[Wow, awesome, you changed your mind! Have fun!|p5.s3]]
+
+[[I thought you said you weren’t feeling ready to have sex.  Are you sure?|p5.s4]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="p5.s3" tags="" position="822,2005" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
+Hey, did you and $prom go anywhere after the dance?
+
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;$prom and I are chilling at my house. what&#39;s up?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 0s&gt;&gt;Andre&#39;s parents aren&#39;t home so we went back to their house. I think we’re going to . . . you know . . .&lt;&lt;/timed&gt;&gt;
+
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;Wow, awesome, you changed your mind! Have fun!&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 3s&gt;&gt;yeah thanks&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 6s&gt;&gt;
+[[. . . the night moves on.|e1.s1]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="p5.s4" tags="" position="972,2005" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;I thought you said you weren’t feeling ready to have sex. Are you sure?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 3s&gt;&gt;Yeah, I did, but Andre said we can just do like touching and stuff, so it’s not like really sex? They said that we don’t have to use a condom or anything so it doesn’t count, you know?&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 6s&gt;&gt;
+//$prom is looking over your shoulder. You quickly reply . . .//
+
+[[I think you can decide what counts as sex for you. Do you know for sure that you want to do those things with Andre?|P5.S9]]
+
+[[Remember, you should use protection even if you aren’t having penetrative sex.|P5.S5]]
+	
+[[Have you been drinking?|P5.S6]]
+&lt;&lt;/timed&gt;&gt;
+</tw-passagedata><tw-passagedata pid="32" name="e1.s1" tags="" position="704,2493" size="100,100">Epilogue placeholder
+
+go back and back new choices!</tw-passagedata><tw-passagedata pid="33" name="P5.S9" tags="" position="882,2159" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;I think you can decide what counts as sex for you.  Do you know for sure that you want to do those things with Andre?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 3s&gt;&gt;Yeah, I don’t know if I’m ready for this.&lt;&lt;/timed&gt;&gt;
+
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 6s&gt;&gt;&lt;p align=&quot;right&quot;&gt;That’s okay! Do you want me to come pick you up? Do you have a way to get home?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 9s&gt;&gt;Thanks, but I don’t want to leave yet. I’m going to talk to Andre.&lt;&lt;/timed&gt;&gt;
+
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 12s&gt;&gt;&lt;p align=&quot;right&quot;&gt;That&#39;s a good idea! Let me know how it goes plz&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 15s&gt;&gt;
+[[. . . the night moves on.|e1.s1]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="P5.S5" tags="" position="1020,2153" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;Remember, you should use protection even if you aren’t having penetrative sex.&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 3s&gt;&gt;uhh what do you mean?&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 6s&gt;&gt;
+//Maybe you can pull in an outside source for this.//
+Send Grayson [[a text link.|p5.s7]]
+Send Grayson [[an image.|p5.s8]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="P5.S6" tags="" position="1164,2155" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;Have you been drinking?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 3s&gt;&gt;I haven’t, but Andre has.&lt;&lt;/timed&gt;&gt;
+
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 6s&gt;&gt;&lt;p align=&quot;right&quot;&gt;Maybe you should wait until y&#39;all sober up—even if it was Andre&#39;s idea, people can’t consent if they’re drunk.&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 9s&gt;&gt;You’re right, I’ll get us some water and we’ll do something else for now. Thanks for chatting with me!&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 12s&gt;&gt;
+[[. . . the night moves on.|e1.s1]]
+&lt;&lt;/timed&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="36" name="p5.s7" tags="" position="945,2303" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;&lt;a href=&quot;https://www.scarleteen.com/article/bodies/can_i_get_pregnant_or_get_or_pass_on_an_sti_from_that&quot; target=&quot;_blank&quot;&gt;Scarleteen Link&lt;/a&gt; &lt;- this page has some good sources!&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 3s&gt;&gt;i&#39;ll take a look, thanks!&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 6s&gt;&gt;
+[[. . . the night moves on.|e1.s1]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="p5.s8" tags="" position="1095,2303" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
+&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;&lt;a href=&quot;https://www.yeah.org.au/wp-content/uploads/2014/06/Get-Closer-with-barriers-thumb.png&quot; target=&quot;_blank&quot;&gt;Safe Sex Methods Link&lt;/a&gt; &lt;- this poster has some good ideas!&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+
+&lt;&lt;timed 3s&gt;&gt;i&#39;ll take a look, thanks!&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 6s&gt;&gt;
+[[. . . the night moves on.|e1.s1]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata></tw-storydata>
