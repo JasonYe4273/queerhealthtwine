@@ -98,7 +98,29 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Queer Health" startnode="1" creator="Twine" creator-version="2.3.13" ifid="64248BFF-A2CD-4CF3-8F80-64CE3B44A714" zoom="1" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
+	<tw-storydata name="Queer Health" startnode="1" creator="Twine" creator-version="2.3.13" ifid="64248BFF-A2CD-4CF3-8F80-64CE3B44A714" zoom="1" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.texting {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 25em;
+  position: relative;
+  padding: 10px;
+  background: #e6e6e6;
+  border-radius: 20px;
+}
+
+.youtexting {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 25em;
+  position: relative;
+  padding: 10px;
+  background: #01ff00;
+  border-radius: 20px;
+}
+
+body {
 background-color: white;
 color: black;
 font-family: OCR A Std, monospace;
@@ -211,18 +233,11 @@ filter: blur(5px);
       }
 
 
-
-.typing {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 .typing__dot1 {
   float: left;
-  width: 6px;
-  height: 6px;
-  margin: 0 3px;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
   background: #8d8c91;
   border-radius: 50%;
   opacity: 0;
@@ -232,21 +247,21 @@ filter: blur(5px);
 
 .typing__dot2 {
   float: left;
-  width: 6px;
-  height: 6px;
-  margin: 0 3px;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
   background: #8d8c91;
   border-radius: 50%;
   opacity: 0;
   animation: loadingFade 1s infinite;
-  animation-delay: 0,2s;
+  animation-delay: 0.2s;
 }
 
 .typing__dot3 {
   float: left;
-  width: 6px;
-  height: 6px;
-  margin: 0 3px;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
   background: #8d8c91;
   border-radius: 50%;
   opacity: 0;
@@ -383,7 +398,7 @@ Who do you want to ask to go to prom with you?
 [[Better go work on that promposal. Maybe your friends have some good ideas.|p2.s1]]
 
 
-</tw-passagedata><tw-passagedata pid="9" name="p2.s1" tags="" position="801,405" size="100,100">&#39;&#39;//Chapter 2: Plotting a Promposal//&#39;&#39;
+</tw-passagedata><tw-passagedata pid="9" name="p2.s1" tags="" position="808,388" size="100,100">&#39;&#39;//Chapter 2: Plotting a Promposal//&#39;&#39;
 
 Promposal season is in full swing. Every other day, you see balloons, cakes, and cheesy promposal signs like “I cannoli ask one person, but can it pastably be with you?” 
 
@@ -394,58 +409,147 @@ Ding! You get a text from your friend Carlos after a long night of homework.
 &#39;&#39;(3) Unread messages&#39;&#39;
 [[Carlos 👀 (3)|car_1]]
 </tw-passagedata><tw-passagedata pid="10" name="em_1" tags="" position="14,215" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="car_1" tags="" position="908,517" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
-Omg everyone is posting their prom dates and promposals on insta.
 
-&lt;&lt;timed 3s &gt;&gt;Im gonna ask Henry tomorrow and I need you to take pictures for me!&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 4s &gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;typing&quot;&gt;
-  &lt;div&gt;Carlos is typing&lt;/div&gt;
-  &lt;div class=&quot;typing__dot1&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;typing__dot2&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;typing__dot3&quot;&gt;&lt;/div&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
 &lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;Im making a cake and getting some balloons that say prom on them.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 9s&gt;&gt;&lt;p align=&quot;right&quot;&gt;haha okay okay i’ll take pictures! I love that idea he is going to absolutely love it.&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
-
-&lt;&lt;timed 12s&gt;&gt;thanks i knew i could count on you. So who are you going to ask???&lt;&lt;/timed&gt;&gt;
-
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 15s&gt;&gt;&lt;p align=&quot;right&quot;&gt; i think i’m going to ask $prom.&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
-
-&lt;&lt;timed 18s&gt;&gt;how do you want to ask $prom?! 💘💘💘&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+  &lt;div class=&quot;texting&quot;&gt;Omg everyone is posting their prom dates and promposals on insta.
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+  &lt;div class=&quot;texting&quot;&gt;Im gonna ask Henry tomorrow and I need you to take pictures for me!
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;&lt;span id=&quot;typing2&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;&lt;&lt;replace &quot;#typing2&quot;&gt;&gt;
+  &lt;div class=&quot;texting&quot;&gt;Im making a cake and getting some balloons that say prom on them.
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;&lt;span id=&quot;typing3&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#typing3&quot;&gt;&gt;
+  &lt;div class=&quot;youtexting&quot;&gt;haha okay okay ill take pictures! I love that idea he is going to absolutely love it.
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;&lt;span id=&quot;typing4&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;&lt;&lt;replace &quot;#typing4&quot;&gt;&gt;
+  &lt;div class=&quot;texting&quot;&gt;thanks i knew i could count on you. So who are you going to ask???
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 16s&gt;&gt;&lt;span id=&quot;typing5&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 18s&gt;&gt;&lt;&lt;replace &quot;#typing5&quot;&gt;&gt;
+  &lt;div class=&quot;youtexting&quot;&gt;i think i&#39;m going to ask $prom.
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 19s&gt;&gt;&lt;span id=&quot;typing6&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 21s&gt;&gt;&lt;&lt;replace &quot;#typing6&quot;&gt;&gt;
+  &lt;div class=&quot;texting&quot;&gt;how do you want to ask $prom?! 💘💘💘
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 21s&gt;&gt;
 Well, that is a good question. Dramatic Disney inspired ask or keep it lowkey?
 [[im thinking during lunch ill bring my speaker, a sign, and some chocolates. I want to make it a spectacle!|p2.s3]]
 [[invite a few friends over for dinner and ask the waiter to bring out dessert that says “Prom?”|p2.s4]]
 [[alone after school, ill ask when no one is around|p2.s5]]
-&lt;&lt;/timed&gt;&gt;
-
-
-
-</tw-passagedata><tw-passagedata pid="12" name="nina_1" tags="" position="28,325" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="Untitled Passage" tags="" position="1065,69" size="100,100">&lt;span class=&quot;blur&quot;&gt;Blurry Text&lt;/span&gt;
-
-&lt;div class=&quot;typing&quot;&gt;
-  &lt;div&gt;Carlos is typing&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="nina_1" tags="" position="28,325" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="Untitled Passage" tags="" position="1065,69" size="100,100">&lt;div class=&quot;texting&quot;&gt;
   &lt;div class=&quot;typing__dot1&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;typing__dot2&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;typing__dot3&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="p2.s3" tags="" position="749,667" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;im thinking during lunch ill bring my speaker, a sign, and some chocolates. I want to make it a spectacle!&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+&lt;/div&gt;
 
-&lt;&lt;timed 3s &gt;&gt;aaaaaa how exciting! let me know [[how it goes!|p2.s3b]]&lt;&lt;/timed&gt;&gt;
+&lt;div display=&quot;flex&quot;&gt;
+&lt;div class=&quot;texting&quot;&gt;Hi&lt;/div&gt;
+&lt;div /&gt;
+&lt;div class=&quot;texting&quot;&gt;Hello&lt;/div&gt;
+&lt;div /&gt;
+&lt;div class=&quot;youtexting&quot;&gt;Hi&lt;/div&gt;
+&lt;div /&gt;
+&lt;div class=&quot;youtexting&quot;&gt;a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a &lt;/div&gt;
+&lt;div /&gt;
+&lt;/div&gt;
+Testing
+</tw-passagedata><tw-passagedata pid="14" name="p2.s3" tags="" position="749,667" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
+
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;im thinking during lunch ill bring my speaker, a sign, and some chocolates. I want to make it a spectacle!
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;aaaaaa how exciting! let me know how it goes!
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 6s&gt;&gt;[[Next week...|p2.s3b]]&lt;&lt;/timed&gt;&gt;
 
 
 
 
 </tw-passagedata><tw-passagedata pid="15" name="p2.s4" tags="" position="903,675" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;invite a few friends over for dinner and ask the waiter to bring out dessert that says “Prom?”&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;invite a few friends over for dinner and ask the waiter to bring out dessert that says “Prom?”
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;aaaaaa how exciting! let me know how it goes!
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 3s &gt;&gt;aaaaaa how exciting! let me know [[how it goes!|p2.s4b]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="p2.s5" tags="" position="1041,667" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;alone after school, ill ask $prom when no one is around&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+&lt;&lt;timed 6s&gt;&gt;[[Next week...|p2.s3b]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="p2.s5" tags="" position="1041,667" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;alone after school, ill ask $prom when no one is around
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;aaaaaa how exciting! let me know how it goes!
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 3s &gt;&gt;aaaaaa how exciting! let me know [[how it goes!|p2.s5b]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="p2.s3b" tags="" position="749,817" size="100,100">It has been one week since your conversation with Carlos, and the plans are finally all set. You’re sitting at the lunch table in the very center of the room with 3 of your friends, clutching a sign saying “Come dance at prom with me!” while “Stereo Hearts” by Gym Class Heroes is blasting on the speaker. You can feel beads of sweat dripping from the back of your neck in &lt;&lt;linkappend &quot;anticipation...&quot; t8n&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;[[Next week...|p2.s3b]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="p2.s3b" tags="" position="749,817" size="100,100">It has been one week since your conversation with Carlos, and the plans are finally all set. You’re sitting at the lunch table in the very center of the room with 3 of your friends, clutching a sign saying “Come dance at prom with me!” while “Stereo Hearts” by Gym Class Heroes is blasting on the speaker. You can feel beads of sweat dripping from the back of your neck in &lt;&lt;linkappend &quot;anticipation...&quot; t8n&gt;&gt;
 
 $prom finally ambles in, and all of your friends start performing an extremely poorly choreographed dance. $prom starts laughing but then joins the group in dance and says “yes!” 
 
@@ -508,9 +612,17 @@ you meet grayson
 you talk with others about heterosexual norms surrounding prom
 
 [[move on until this is coded lol|p5.s1]]</tw-passagedata><tw-passagedata pid="27" name="p5.s1" tags="" position="897,1705" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
-Hey, did you and $prom go anywhere after the dance?
 
-//Oh, it&#39;s Grayson. [[Let&#39;s see what&#39;s up.|p5.s2]]//
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;Hey, did you and $prom go anywhere after the dance?
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 3s&gt;&gt;//Oh, it&#39;s Grayson. [[Let&#39;s see what&#39;s up.|p5.s2]]//&lt;&lt;/timed&gt;&gt;
 </tw-passagedata><tw-passagedata pid="28" name="p4.s2" tags="" position="979,1543" size="100,100">//&#39;&#39;Chapter 4: Prom (Beach?) Night!&#39;&#39;//
 
 PLACEHOLDER :)
@@ -520,37 +632,82 @@ grayson is there
 you talk with others about heterosexual norms surrounding prom
 
 [[move on until this is coded lol|p5.s1]]</tw-passagedata><tw-passagedata pid="29" name="p5.s2" tags="" position="897,1855" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
-Hey, did you and $prom go anywhere after the dance?
+&lt;div class=&quot;texting&quot;&gt;Hey, did you and $prom go anywhere after the dance?&lt;/div&gt;
 
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 3s&gt;&gt;&lt;p align=&quot;right&quot;&gt;$prom and I are chilling at my house. what&#39;s up?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;$prom and I are chilling at my house. what&#39;s up?
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;Andre&#39;s parents aren&#39;t home so we went back to their house. I think we’re going to . . . you know . . .
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 6s&gt;&gt;Andre&#39;s parents aren&#39;t home so we went back to their house. I think we’re going to . . . you know . . .&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 9s&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
 //Oh, dang. That&#39;s a little different than what Grayson told you at prom. What do you want to say?//
 
 [[Wow, awesome, you changed your mind! Have fun!|p5.s3]]
 
 [[I thought you said you weren’t feeling ready to have sex.  Are you sure?|p5.s4]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="p5.s3" tags="" position="822,2005" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
-Hey, did you and $prom go anywhere after the dance?
+&lt;div class=&quot;texting&quot;&gt;Hey, did you and $prom go anywhere after the dance?&lt;/div&gt;
 
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;$prom and I are chilling at my house. what&#39;s up?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+&lt;div class=&quot;youtexting&quot;&gt;$prom and I are chilling at my house. what&#39;s up?&lt;/div&gt;
 
-&lt;&lt;timed 0s&gt;&gt;Andre&#39;s parents aren&#39;t home so we went back to their house. I think we’re going to . . . you know . . .&lt;&lt;/timed&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;Andre&#39;s parents aren&#39;t home so we went back to their house. I think we’re going to . . . you know . . .&lt;/div&gt;
 
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;Wow, awesome, you changed your mind! Have fun!&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;Wow, awesome, you changed your mind! Have fun!
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;yeah thanks
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 3s&gt;&gt;yeah thanks&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
 [[. . . the night moves on.|e1.s1]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="p5.s4" tags="" position="972,2005" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;I thought you said you weren’t feeling ready to have sex. Are you sure?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+&lt;div class=&quot;texting&quot;&gt;Hey, did you and $prom go anywhere after the dance?&lt;/div&gt;
 
-&lt;&lt;timed 3s&gt;&gt;Yeah, I did, but Andre said we can just do like touching and stuff, so it’s not like really sex? They said that we don’t have to use a condom or anything so it doesn’t count, you know?&lt;&lt;/timed&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;$prom and I are chilling at my house. what&#39;s up?&lt;/div&gt;
 
-&lt;&lt;timed 6s&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;Andre&#39;s parents aren&#39;t home so we went back to their house. I think we’re going to . . . you know . . .&lt;/div&gt;
+
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;I thought you said you weren’t feeling ready to have sex. Are you sure?
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;Yeah, I did, but Andre said we can just do like touching and stuff, so it’s not like really sex? They said that we don’t have to use a condom or anything so it doesn’t count, you know?
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 7s&gt;&gt;
 //$prom is looking over your shoulder. You quickly reply . . .//
 
 [[I think you can decide what counts as sex for you. Do you know for sure that you want to do those things with Andre?|P5.S9]]
@@ -562,53 +719,149 @@ Hey, did you and $prom go anywhere after the dance?
 </tw-passagedata><tw-passagedata pid="32" name="e1.s1" tags="" position="704,2493" size="100,100">Epilogue placeholder
 
 go back and back new choices!</tw-passagedata><tw-passagedata pid="33" name="P5.S9" tags="" position="882,2159" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;I think you can decide what counts as sex for you.  Do you know for sure that you want to do those things with Andre?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;I think you can decide what counts as sex for you.  Do you know for sure that you want to do those things with Andre?
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;Yeah, I don’t know if I’m ready for this.
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;&lt;span id=&quot;typing2&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;&lt;&lt;replace &quot;#typing2&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;That’s okay! Do you want me to come pick you up? Do you have a way to get home?
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;&lt;span id=&quot;typing3&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#typing3&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;Thanks, but I don’t want to leave yet. I’m going to talk to Andre.
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;&lt;span id=&quot;typing4&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;&lt;&lt;replace &quot;#typing4&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;That&#39;s a good idea! Let me know how it goes plz
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 3s&gt;&gt;Yeah, I don’t know if I’m ready for this.&lt;&lt;/timed&gt;&gt;
-
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 6s&gt;&gt;&lt;p align=&quot;right&quot;&gt;That’s okay! Do you want me to come pick you up? Do you have a way to get home?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
-
-&lt;&lt;timed 9s&gt;&gt;Thanks, but I don’t want to leave yet. I’m going to talk to Andre.&lt;&lt;/timed&gt;&gt;
-
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 12s&gt;&gt;&lt;p align=&quot;right&quot;&gt;That&#39;s a good idea! Let me know how it goes plz&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
-
-&lt;&lt;timed 15s&gt;&gt;
+&lt;&lt;timed 16s&gt;&gt;
 [[. . . the night moves on.|e1.s1]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="P5.S5" tags="" position="1020,2153" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;Remember, you should use protection even if you aren’t having penetrative sex.&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;Remember, you should use protection even if you aren’t having penetrative sex.
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;uhh what do you mean?
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 3s&gt;&gt;uhh what do you mean?&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
 //Maybe you can pull in an outside source for this.//
 Send Grayson [[a text link.|p5.s7]]
 Send Grayson [[an image.|p5.s8]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="P5.S6" tags="" position="1164,2155" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;Have you been drinking?&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;Have you been drinking?
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;I haven’t, but Andre has.
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;&lt;span id=&quot;typing2&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;&lt;&lt;replace &quot;#typing2&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;Maybe you should wait until y&#39;all sober up—even if it was Andre&#39;s idea, people can’t consent if they’re drunk.
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;&lt;span id=&quot;typing3&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#typing3&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;You’re right, I’ll get us some water and we’ll do something else for now. Thanks for chatting with me!
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 3s&gt;&gt;I haven’t, but Andre has.&lt;&lt;/timed&gt;&gt;
-
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 6s&gt;&gt;&lt;p align=&quot;right&quot;&gt;Maybe you should wait until y&#39;all sober up—even if it was Andre&#39;s idea, people can’t consent if they’re drunk.&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
-
-&lt;&lt;timed 9s&gt;&gt;You’re right, I’ll get us some water and we’ll do something else for now. Thanks for chatting with me!&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 12s&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;
 [[. . . the night moves on.|e1.s1]]
 &lt;&lt;/timed&gt;&gt;
 
 </tw-passagedata><tw-passagedata pid="36" name="p5.s7" tags="" position="945,2303" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;&lt;a href=&quot;https://www.scarleteen.com/article/bodies/can_i_get_pregnant_or_get_or_pass_on_an_sti_from_that&quot; target=&quot;_blank&quot;&gt;Scarleteen Link&lt;/a&gt; &lt;- this page has some good sources!&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
 
-&lt;&lt;timed 3s&gt;&gt;i&#39;ll take a look, thanks!&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;&lt;a href=&quot;https://www.scarleteen.com/article/bodies/can_i_get_pregnant_or_get_or_pass_on_an_sti_from_that&quot; target=&quot;_blank&quot;&gt;Scarleteen Link&lt;/a&gt; &lt;- this page has some good sources!
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;i&#39;ll take a look, thanks!
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
 [[. . . the night moves on.|e1.s1]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="p5.s8" tags="" position="1095,2303" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
-&lt;span class=&quot;greentext&quot;&gt;&lt;&lt;timed 0s&gt;&gt;&lt;p align=&quot;right&quot;&gt;&lt;a href=&quot;https://www.yeah.org.au/wp-content/uploads/2014/06/Get-Closer-with-barriers-thumb.png&quot; target=&quot;_blank&quot;&gt;Safe Sex Methods Link&lt;/a&gt; &lt;- this poster has some good ideas!&lt;/p&gt;&lt;&lt;/timed&gt;&gt;&lt;/span&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;&lt;a href=&quot;https://www.yeah.org.au/wp-content/uploads/2014/06/Get-Closer-with-barriers-thumb.png&quot; target=&quot;_blank&quot;&gt;Safe Sex Methods Link&lt;/a&gt; &lt;- this poster has some good ideas!
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;i&#39;ll take a look, thanks!
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 3s&gt;&gt;i&#39;ll take a look, thanks!&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
 [[. . . the night moves on.|e1.s1]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
