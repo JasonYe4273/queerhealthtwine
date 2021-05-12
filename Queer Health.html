@@ -182,10 +182,99 @@ filter: blur(5px);
 }
 
 
+html[data-dialog] body {
+	overflow: hidden;
+}
 
 
+/*
+	Default structural styles.
+*/
+#ui-overlay.open {
+	visibility: visible;
+	transition: opacity 200ms ease-in;
+}
+#ui-overlay.open {
+	visibility: visible;
+	transition: opacity 200ms ease-in;
+}
+#ui-overlay:not(.open) {
+	transition: visibility 200ms step-end, opacity 200ms ease-in;
+}
+#ui-overlay {
+	visibility: hidden;
+	opacity: 0;
+	z-index: 100000;
+	position: fixed;
+	/*
+	top: -50vh;
+	left: -50vw;
+	height: 200vh;
+	width: 200vw;
+	*/
+	top: -50%;
+	left: -50%;
+	height: 200%;
+	width: 200%;
+}
+#ui-dialog.open {
+	display: block;
+	transition: opacity 200ms ease-in;
+}
+/*
+	We do not animate `#ui-dialog:not(.open)` for various reasons.  Chief among
+	them, however, is so that the dialog isn't in the middle of its animation
+	when other page updates happen.
 
+	e.g. The restoration of `overflow` on `body` would cause the still animating
+	     dialog to jump around a little if a scrollbar were to pop in.
 
+	     Any dialog action which performs a task which has its own animations
+	     (e.g. passage display) or causes the page to reload in addition to
+	     closing the dialog could cause display shenanigans.
+*/
+#ui-dialog {
+	display: none;
+	opacity: 0;
+	z-index: 100100;
+	position: fixed;
+	top: 50px;
+	margin: 0;
+	padding: 0;
+}
+#ui-dialog > * {
+	box-sizing: border-box;
+}
+#ui-dialog-titlebar {
+	position: relative;
+}
+#ui-dialog-close {
+	/*display: block;*/
+	position: absolute;
+	right: 0;
+	top: 0;
+	white-space: nowrap;
+}
+#ui-dialog-body {
+  	color: black;
+  	background-color: white;
+	overflow: auto;
+	min-width: 280px;
+	height: 92%; /* fallback for browsers without support for calc() */
+	height: calc(100% - 2.1em); /* parent - title(2.1em) */
+}
+
+#ui-dialog-titlebar {
+	background-color: #aed6a1;
+	min-height: 24px;
+}
+#ui-dialog-title {
+	margin: 0;
+	padding: 0.2em 3.5em 0.2em 0.5em;
+	font-size: 1.5em;
+	text-align: center;
+	text-transform: uppercase;
+  	color: black;
 
 
 
@@ -229,6 +318,8 @@ filter: blur(5px);
 
 
 
+
+
 </script><tw-passagedata pid="1" name="Start" tags="" position="805,107" size="100,100">You’re a senior at PS.37 and prom is rapidly approaching. Before we get into the trials and tribulations of prom . . . who are you?
 
 &#39;&#39;A Queer Prom Night&#39;&#39;
@@ -240,10 +331,21 @@ Written in Twine, SugarCube 2.21.0
 &lt;&lt;set $name to &quot;Player&quot;&gt;&gt;
 What&#39;s your name? &lt;&lt;textbox &quot;$name&quot; &quot;&quot;&gt;&gt;
 
-What are your pronouns?
+What are your &lt;&lt;link &quot;pronouns?&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Pronouns&quot;);
+    Dialog.wiki(&quot;Pronouns are one way we can validate and affirm one’s gender identity. Usually we assume someone’s pronouns (and, by extension, their gender identity) based on their outward appearance, but this assumption can be potentially harmful if it is wrong. By normalizing the practice of sharing pronouns, we open up spaces where trans, gender-nonconforming, and gender-questioning people can feel safe and affirmed. At the same time, don’t force someone to disclose their pronouns if they don’t want to. They may still be questioning their gender identity or don’t feel safe disclosing, so receiving outward pressure for disclosure can be unnecessarily stressful.&quot;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;
 &lt;&lt;radiobutton &quot;$pr&quot; &quot;he&quot; checked&gt;&gt; He/him
 &lt;&lt;radiobutton &quot;$pr&quot; &quot;she&quot;&gt;&gt; She/her
 &lt;&lt;radiobutton &quot;$pr&quot; &quot;they&quot;&gt;&gt; They/them
+&lt;&lt;radiobutton &quot;$pr&quot; &quot;she/they&quot;&gt;&gt; She/They
+&lt;&lt;radiobutton &quot;$pr&quot; &quot;he/they&quot;&gt;&gt; He/They
+&lt;&lt;radiobutton &quot;$pr&quot; &quot;any/all&quot;&gt;&gt; Any/all
+&lt;&lt;radiobutton &quot;$pr&quot; &quot;no&quot;&gt;&gt; None
+
 
 [[So, what&#39;s this high school like?|p1.s2]]
 [[Do I have any friends?|p1.s3]]
@@ -265,7 +367,8 @@ What are your pronouns?
 
 //&lt;span class=&quot;pinktext&quot;&gt;&lt;/span&gt;
 
-&lt;&lt;set $prom to &quot; placeholder&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="text_mock_up" tags="" position="1363,272" size="100,100">
+&lt;&lt;set $prom to &quot; placeholder&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="3" name="text_mock_up" tags="" position="1287,292" size="100,100">
 
 &lt;&lt;timed 16s&gt;&gt;
 [[(15) unread messages]]
@@ -312,7 +415,7 @@ Ding! You get a text from your friend Carlos after a long night of homework.
 
 &#39;&#39;(3) Unread messages&#39;&#39;
 [[Carlos 👀 (3)|car_1]]
-</tw-passagedata><tw-passagedata pid="10" name="em_1" tags="" position="14,215" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="car_1" tags="" position="1932,373" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
+&lt;&lt;set $aro to &quot;false&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="em_1" tags="" position="14,215" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="car_1" tags="" position="1932,373" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
 
 &lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
   &lt;div class=&quot;typing__dot1&quot; /&gt;
@@ -435,7 +538,7 @@ Testing
 &lt;div class=&quot;texting&quot;&gt;aaaaaa how exciting! let me know how it goes!
 &lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 6s&gt;&gt;[[Next week...|p2.s3b]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="p2.s5" tags="" position="2065,523" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
+&lt;&lt;timed 6s&gt;&gt;[[Next week...|p2.s4b]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="p2.s5" tags="" position="2083,533" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
 &lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
   &lt;div class=&quot;typing__dot1&quot; /&gt;
   &lt;div class=&quot;typing__dot2&quot; /&gt;
@@ -453,7 +556,9 @@ Testing
 &lt;div class=&quot;texting&quot;&gt;aaaaaa how exciting! let me know how it goes!
 &lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 6s&gt;&gt;[[Next week...|p2.s3b]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="p2.s3b" tags="" position="1773,673" size="100,100">It has been one week since your conversation with Carlos, and the plans are finally all set. You’re sitting at the lunch table in the very center of the room with 3 of your friends, clutching a sign saying “Come dance at prom with me!” while “Stereo Hearts” by Gym Class Heroes is blasting on the speaker. You can feel beads of sweat dripping from the back of your neck in &lt;&lt;linkappend &quot;anticipation...&quot; t8n&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;[[Next week...|p2.s5b]]&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="p2.s3b" tags="" position="1773,673" size="100,100">It has been one week since your conversation with Carlos, and the plans are finally all set. You’re sitting at the lunch table in the very center of the room with 3 of your friends, clutching a sign saying “Come dance at prom with me!” while “Stereo Hearts” by Gym Class Heroes is blasting on the speaker. You can feel beads of sweat dripping from the back of your neck in &lt;&lt;linkappend &quot;anticipation...&quot; t8n&gt;&gt;
+
+&lt;audio src = &quot;C:\Users\Marvez\Documents\Twine\Stories\bell.wav&quot; autoplay&gt;&lt;/audio&gt;
 
 $prom finally ambles in, and all of your friends start performing an extremely poorly choreographed dance. $prom starts laughing but then joins the group in dance and says “yes!” 
 
@@ -478,7 +583,7 @@ Well, let&#39;s take that as a yes.//
 
 [[&#39;&#39;Prom Date Status: Mission Success 🎉&#39;&#39;|p2.s6]] 
 
-</tw-passagedata><tw-passagedata pid="20" name="p2.s6" tags="" position="1929,821" size="100,100">You have successfully asked $prom to prom. You spend the next few weeks finishing up your assignments, getting a prom outfit, and making preparations for the big day. Next thing you know, [[it’s the day of prom!|p3.s1]] </tw-passagedata><tw-passagedata pid="21" name="p3.s1" tags="" position="1929,971" size="100,100">//&#39;&#39;Chapter 3: Pre-Game AKA LET&#39;S PARTY!&#39;&#39;//
+</tw-passagedata><tw-passagedata pid="20" name="p2.s6" tags="" position="1929,821" size="100,100">You have successfully asked $prom to prom. You spend the next few weeks finishing up your assignments, getting a prom outfit, and making preparations for the big day. But first, there’s some mandatory [[senior class assembly|p2.s7]] you have to go to before prom.</tw-passagedata><tw-passagedata pid="21" name="p3.s1" tags="" position="1929,971" size="100,100">//&#39;&#39;Chapter 3: Pre-Game AKA LET&#39;S PARTY!&#39;&#39;//
 
 You’ve gathered with all of your friends at Emmerson&#39;s house in preparation for prom. Everyone’s complimenting how good you look in your . . .
 
@@ -506,7 +611,13 @@ take the offered bottle and [[chug it.|p3.s4]] You indulge in the drinking games
 
 [[Time to head over to your schools’s gym!|p4.s1]]</tw-passagedata><tw-passagedata pid="25" name="p3.s4" tags="" position="2003,1249" size="100,100">You find yourself seated on the living room couch and thoroughly drunk. You’re not completely gone, but you hear Carlos comment that there’s no way you and several others will be let into prom in your current state. 
 
-$prom suggests an alternative that their older brother did when he was feeling jaded about prom: Buying a ton of fast food and driving out to the local beach to have a romantic group picnic. [[Eating helps with the drunkenness anyways, right?|p4.s2]] 
+You vaguely perceive some looks of frustration and judgment from those in the group who aren’t as far gone as you are. 
+
+$prom suggests an alternative that their older brother did when he was feeling jaded about prom: Buy a ton of fast food and drive out to the local beach to have a romantic group picnic. 
+
+While there is some interest, the relatively sober people in the group are still definitely married to the notion of going to prom. The group splits based on those preferences, largely leaving dates with trashed partners to stay behind and look after them.
+
+[[Eating helps with the drunkenness anyways, right?|p4.s2]] 
 </tw-passagedata><tw-passagedata pid="26" name="p4.s1" tags="" position="1853,1399" size="100,100">//&#39;&#39;Chapter 4: Prom Night!&#39;&#39;//
 
 The squad pulls up to prom and you can already hear the faint thrum of music through the closed gym doors. The entrance is decked with all manner of decorations, adding a flair to the building that you’ve never really seen on school grounds before.
@@ -529,11 +640,13 @@ You and $prom approach the gym doors, [[hand in hand.|p4.s3]]
 
 Since everyone’s at prom, the local beach is blissfully empty. Better yet, golden hour is beginning to set in and the set up is simply amazing. You notice Nina and $prom setting up the beach towels while everyone else pitches in to bring the fast food treasures over. Each car was assigned a place to raid and your drunk self marvels at the variety of Taco Bell, McDonalds, and Kentucky Fried Chicken lain before you. 
 
-Emmerson begins setting up their bluetooth speaker and before you know it, some quality bops are blasting into the air. You notice some of the group has broken off into a cute little dance circle.
+Even though the current group is much smaller than the one gathered at Emerson’s place, there is still a general atmosphere of care and support. $prom hands you a jumbo cup full of water and instructs you to drink from it constantly before you can stumble off to do who knows what.
 
-You unsteadily lean against the closest car and wonder what to do.
+Emmerson begins setting up their bluetooth speaker and before you know it, some quality bops are blasting into the air. You notice one couple has broken off to dance in a hilarious assemblage of flailing arms and swaying heads.
+
+You unsteadily lean against the closest car and wonder what to do next.
 Is that even a question? All of that food is calling to you. [[Time to eat!|p4.s4]] 
-Not gonna lie, that dance circle is looking pretty fun. You’re pretty sure you can still [[bust some moves,|p4.s5]] even if you’re drunk.
+Not gonna lie, dancing sounds pretty fun. You’re pretty sure you can still [[bust some moves,|p4.s5]] even if you’re drunk.
 </tw-passagedata><tw-passagedata pid="29" name="p5.s2" tags="" position="1921,1711" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
 &lt;div class=&quot;texting&quot;&gt;Hey, did y&#39;all go anywhere after the dance?&lt;/div&gt;
 
@@ -562,10 +675,10 @@ Not gonna lie, that dance circle is looking pretty fun. You’re pretty sure you
 [[I thought you said you weren’t feeling ready to have sex.  Are you sure?|p5.s4]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="p5.s3" tags="" position="1846,1861" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
 &lt;div class=&quot;texting&quot;&gt;
-Hey, did you and $prom go anywhere after the dance?
+Hey, did y&#39;all go anywhere after the dance?
 &lt;/div&gt;
 
-&lt;div class=&quot;youtexting&quot;&gt;$prom and I are chilling at my house. what&#39;s up?&lt;/div&gt;
+&lt;div class=&quot;youtexting&quot;&gt;just chilling at my house. what&#39;s up?&lt;/div&gt;
 
 &lt;div class=&quot;texting&quot;&gt;Andre&#39;s parents aren&#39;t home so we went back to their house. I think we’re going to . . . you know . . .&lt;/div&gt;
 
@@ -587,11 +700,11 @@ Hey, did you and $prom go anywhere after the dance?
 &lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 7s&gt;&gt;
-[[. . . the night moves on.|e1.s1]]
+[[. . . the night moves on.|e1.s2]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="p5.s4" tags="" position="1996,1861" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
-&lt;div class=&quot;texting&quot;&gt;Hey, did you and $prom go anywhere after the dance?&lt;/div&gt;
+&lt;div class=&quot;texting&quot;&gt;Hey, did y&#39;all go anywhere after the dance?&lt;/div&gt;
 
-&lt;div class=&quot;youtexting&quot;&gt;$prom and I are chilling at my house. what&#39;s up?&lt;/div&gt;
+&lt;div class=&quot;youtexting&quot;&gt;chilling at my house. what&#39;s up?&lt;/div&gt;
 
 &lt;div class=&quot;texting&quot;&gt;Andre&#39;s parents aren&#39;t home so we went back to their house. I think we’re going to . . . you know . . .&lt;/div&gt;
 
@@ -613,15 +726,15 @@ Hey, did you and $prom go anywhere after the dance?
 &lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 7s&gt;&gt;
-//$prom is looking over your shoulder. You quickly reply . . .//
+//One of your parents is sneaking a look over your shoulder. You quickly reply . . .//
 
 [[I think you can decide what counts as sex for you. Do you know for sure that you want to do those things with Andre?|P5.S9]]
 
 [[Remember, you should use protection even if you aren’t having penetrative sex.|P5.S5]]
 	
-[[Have you been drinking?|P5.S6]]
+[[Wait, let’s go back a bit first. Have either of you been drinking?|P5.S6]]
 &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="32" name="e1.s1" tags="" position="1728,2349" size="100,100">Thanks for playing! Close this window to end the game.
+</tw-passagedata><tw-passagedata pid="32" name="e1.s1" tags="" position="1720,2343" size="100,100">Thanks for playing! Close this window to end the game.
 
 Want to make different choices? A lot happened that night.
 
@@ -670,7 +783,7 @@ Want to make different choices? A lot happened that night.
 &lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 16s&gt;&gt;
-[[. . . the night moves on.|e1.s1]]
+[[. . . the night moves on.|e1.s3]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="P5.S5" tags="" position="2044,2009" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
 &lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
   &lt;div class=&quot;typing__dot1&quot; /&gt;
@@ -728,7 +841,7 @@ Send Grayson [[an image.|p5.s8]]
 &lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 13s&gt;&gt;
-[[. . . the night moves on.|e1.s1]]
+[[. . . the night moves on.|e1.s3]]
 &lt;&lt;/timed&gt;&gt;
 
 </tw-passagedata><tw-passagedata pid="36" name="p5.s7" tags="" position="1969,2159" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
@@ -751,7 +864,7 @@ Send Grayson [[an image.|p5.s8]]
 &lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 7s&gt;&gt;
-[[. . . the night moves on.|e1.s1]]
+[[. . . the night moves on.|e1.s3]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="p5.s8" tags="" position="2119,2159" size="100,100">&lt;p align=&quot;center&quot;&gt;Grayson 🤠&lt;/p&gt;
 &lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
   &lt;div class=&quot;typing__dot1&quot; /&gt;
@@ -771,7 +884,7 @@ Send Grayson [[an image.|p5.s8]]
 &lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 7s&gt;&gt;
-[[. . . the night moves on.|e1.s1]]
+[[. . . the night moves on.|e1.s3]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="aro.1" tags="" position="386,399" size="100,100">&#39;&#39;//Chapter 2: Plotting a Promposal//&#39;&#39;
 
 Promposal season is in full swing. Every other day, you see balloons, cakes, and cheesy promposal signs like “I cannoli ask one person, but can it pastably be with you?” 
@@ -781,7 +894,8 @@ You&#39;re going with a group of friends, but that hasn&#39;t kept you away from
 Ding! You get a text from your friend Carlos after a long night of homework.
 
 &#39;&#39;(3) Unread messages&#39;&#39;
-[[Carlos 👀 (3)|aro.car_1]]</tw-passagedata><tw-passagedata pid="39" name="aro.car_1" tags="" position="386,549" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
+[[Carlos 👀 (3)|aro.car_1]]
+&lt;&lt;set $aro to &quot;true&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="aro.car_1" tags="" position="386,549" size="100,100">&lt;p align=&quot;center&quot;&gt;Carlos 👀&lt;/p&gt;
 
 &lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
   &lt;div class=&quot;typing__dot1&quot; /&gt;
@@ -816,7 +930,7 @@ Ding! You get a text from your friend Carlos after a long night of homework.
   &lt;div class=&quot;youtexting&quot;&gt;haha okay okay ill take pictures! I love that idea he is going to absolutely love it.
 &lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-[[How does Carlos always rope you into these events?|aro.2]]</tw-passagedata><tw-passagedata pid="40" name="aro.2" tags="" position="386,699" size="100,100">//&#39;&#39;Chapter 3: Pre-Game AKA LET&#39;S PARTY!&#39;&#39;//
+[[How does Carlos always rope you into these events?|aro.2.1]]</tw-passagedata><tw-passagedata pid="40" name="aro.2" tags="" position="386,699" size="100,100">//&#39;&#39;Chapter 3: Pre-Game AKA LET&#39;S PARTY!&#39;&#39;//
 
 You’ve gathered with all of your friends at Emmerson&#39;s house in preparation for prom. Everyone’s complimenting how good you look in your . . .
 
@@ -844,18 +958,26 @@ take the offered bottle and [[chug it.|aro.p3.s4]] You indulge in the drinking g
 
 [[Time to head over to your schools’s gym!|aro.p4.s1]]</tw-passagedata><tw-passagedata pid="43" name="aro.p3.s4" tags="" position="461,999" size="100,100">You find yourself seated on the living room couch and thoroughly drunk. You’re not completely gone, but you hear Carlos comment that there’s no way you and several others will be let into prom in your current state. 
 
-Nina suggests an alternative that their older brother did when he was feeling jaded about prom: Buying a ton of fast food and driving out to the local beach to have a romantic group picnic. [[Eating helps with the drunkenness anyways, right?|aro.p4.s2]] 
+You vaguely perceive some looks of frustration and judgment from those in the group who aren’t as far gone as you are. 
+
+Nina suggests an alternative that her older brother did when he was feeling jaded about prom: Buy a ton of fast food and drive out to the local beach to have a romantic group picnic. 
+
+While there is some interest, the relatively sober people in the group are still definitely married to the notion of going to prom. The group splits based on those preferences, largely leaving dates with trashed partners to stay behind and look after them.
+
+[[Eating helps with the drunkenness anyways, right?|aro.p4.s2]] 
 </tw-passagedata><tw-passagedata pid="44" name="aro.p4.s1" tags="" position="313,1151" size="100,100">//&#39;&#39;Chapter 4: Prom Night!&#39;&#39;//
 
 The squad pulls up to prom and you can already hear the faint thrum of music through the closed gym doors. The [[entrance|aro.p4.s6]] is decked with all manner of decorations, adding a flair to the building that you’ve never really seen on school grounds before.</tw-passagedata><tw-passagedata pid="45" name="aro.p4.s2" tags="" position="461,1149" size="100,100">//&#39;&#39;Chapter 4: Prom (Beach?) Night!&#39;&#39;//
 
 Since everyone’s at prom, the local beach is blissfully empty. Better yet, golden hour is beginning to set in and the set up is simply amazing. You notice Nina and $prom setting up the beach towels while everyone else pitches in to bring the fast food treasures over. Each car was assigned a place to raid and your drunk self marvels at the variety of Taco Bell, McDonalds, and Kentucky Fried Chicken lain before you. 
 
-Emmerson begins setting up their bluetooth speaker and before you know it, some quality bops are blasting into the air. You notice some of the group has broken off into a cute little dance circle.
+Even though the current group is much smaller than the one gathered at Emerson’s place, there is still a general atmosphere of care and support. Nina hands you a jumbo cup full of water and instructs you to drink from it constantly before you can stumble off to do who knows what.
 
-You unsteadily lean against the closest car and wonder what to do.
+Emmerson begins setting up their bluetooth speaker and before you know it, some quality bops are blasting into the air. You notice one couple has broken off to dance in a hilarious assemblage of flailing arms and swaying heads.
+
+You unsteadily lean against the closest car and wonder what to do next.
 Is that even a question? All of that food is calling to you. [[Time to eat!|aro.p4.s4]] 
-Not gonna lie, that dance circle is looking pretty fun. You’re pretty sure you can still [[bust some moves,|aro.p4.s5]] even if you’re drunk.
+Not gonna lie, dancing sounds pretty fun. You’re pretty sure you can still [[bust some moves,|aro.p4.s5]] even if you’re drunk.
 </tw-passagedata><tw-passagedata pid="46" name="p4.s3" tags="" position="1713,1407" size="100,100">Inside you find all manner of things to potentially do. 
 
 The dance floor is already vibrant with friend groups and couples. As more people arrive, the area surrounding the DJ gets busier and busier. At least the music isn’t terrible. 
@@ -880,52 +1002,68 @@ Carlos walks over and says, &quot;75 dollar ticket means I&#39;m eating 75 dolla
 
 You and $prom laugh and spend time speculating which desserts have the highest price to volume ratio with Carlos until Henry pulls his date back to the dance floor.
 
-&quot;C&#39;mon, they&#39;re annoucing [[prom court|p4.s8]] soon,&quot; Henry says.</tw-passagedata><tw-passagedata pid="51" name="p4.s8" tags="" position="1706,1689" size="100,100">The head of the prom committee steps up onto the stage the DJ’s on and grabs everyone’s attention by lowering the music. The shifting bodies on the dance floor slow to a stop. The sound of chatter fades to silence as heads turn to understand what’s happening.
+&quot;C&#39;mon, they&#39;re annoucing [[prom court|p4.s8]] soon,&quot; Henry says.</tw-passagedata><tw-passagedata pid="51" name="p4.s8" tags="" position="1474,1675" size="100,100">The head of the prom committee steps up onto the stage the DJ’s on and grabs everyone’s attention by lowering the music. The shifting bodies on the dance floor slow to a stop. The sound of chatter fades to silence as heads turn to understand what’s happening.
 
 “Uhm, hi everyone, I’m just here to announce prom king and queen!” the prom committee head exclaims, earning a few whistles and cheers from the crowd.
 
 “Ugh, I totally forgot to place my vote for that,” $prom says. Funnily enough, so did you.
 
-“Good,” Nina chimes in. “Don’t support that [[heteronormative|p4.h]] bullshit.” 
+“Good,” Nina chimes in. “Don’t support that &lt;&lt;link &quot;heteronormative&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Heteronormativity&quot;);
+    Dialog.wiki(&quot;Heteronormativity is the idea that being heterosexual is the default identity. This usually leads to LGBTQ+ identifying individuals having to come out to signify them going against this established societal norm. This assumption has also contributed to the marginalization of LGBTQ+ identities by othering them, or making these identities seem out of place in society.&quot;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt; bullshit.” 
 
 An interesting interjection. How do you respond? 
 [[What do you mean, Nina?|p4.s9]]
 [[Oh yeah, that’s true.|p4.s9]]
-</tw-passagedata><tw-passagedata pid="52" name="p4.h" tags="" position="1518,1671" size="100,100">Heteronormativity is the idea that being heterosexual (or broadly speaking, that being allo/cis/het) is the default identity. This usually leads to LGBTQ+ identifying individuals having to come out to signify them going against this established societal norm. This assumption has also contributed to the marginalization of LGBTQ+ identities by othering them, or making these identities seem out of place in society.
+</tw-passagedata><tw-passagedata pid="52" name="p4.h" tags="" position="1204,1697" size="100,100">Heteronormativity is the idea that being heterosexual (or broadly speaking, that being allo/cis/het) is the default identity. This usually leads to LGBTQ+ identifying individuals having to come out to signify them going against this established societal norm. This assumption has also contributed to the marginalization of LGBTQ+ identities by othering them, or making these identities seem out of place in society.
 
-[[Who knew a dating sim could have so much education in it? Back to the fun!|p4.s8]]</tw-passagedata><tw-passagedata pid="53" name="p4.s9" tags="" position="1674,1825" size="100,100">$prom says, &quot;Wait, wait, wait, okay, now I’m the confused one. What are you both talking about?&quot;
+Who knew a dating sim could have so much education in it? Back to the fun!</tw-passagedata><tw-passagedata pid="53" name="p4.s9" tags="" position="1468,1807" size="100,100">$prom says, &quot;Wait, wait, wait, okay, now I’m the confused one. What are you both talking about?&quot;
 
 Nina says, &quot;Oh, well, the tradition is that we vote for a prom king and prom queen. It doesn’t include, like, gay and lesbian couples, y’know? When have you ever heard of queerness being celebrated at this school like that?&quot;
 
-$prom says, &quot;Oh, huh. Honestly, I’ve never thought about that. Thanks for the info.&quot;
+$prom says, &quot;Oh, huh. Honestly, I’ve never thought about that. But then what would be the alternative to that?&quot;
 
-You nod in response as Nina smiles in a way that tells you this isn’t the first time she&#39;s talked about this. 
+Nina rolls her eyes. &quot;Uhm, I don’t know. Maybe just make the tradition prom royalty and then dole out the king, queen, or your grace, the absolutely amazing non-binary, fuck the patriarchy majesty titles depending on who wins?&quot;
 
-Not too long after, the room erupts into applause and cheers as Chad, the football captain, and his girlfriend, Julia, take the stage to be crowned prom king and queen. Honestly, no one is surprised, but it’s hard not to be swept up in the glamour of it all. You and $prom join in on the celebration on the dance floor while Nina rolls their eyes and heads over to the food table with her date.
+$prom raises their hands defensively in response to Nina’s snarky suggestion. You merely nod in response as Carlos smiles in a way that tells you he&#39;s pretty much done with prom. 
 
-As the end of prom approaches, [[$prom pulls you aside|p4.s11]] with a tentative smile. 
-</tw-passagedata><tw-passagedata pid="54" name="p4.s11" tags="" position="1554,1967" size="100,100">$prom says, &quot;Hey, tonight’s been really great. I’ve been wondering if you’d want to go back to my place and watch a movie together?&quot;
+Not too long after, the room erupts into applause and cheers as Chad, the football captain, and his girlfriend, Julia, take the stage to be crowned prom king and queen. Honestly, no one is surprised, but it’s hard not to be swept up in the glamour of it all, despite the sting of Nina’s recent words. You and $prom join in on the celebration on the dance floor while Nina rolls their eyes and heads over to the food table with her date.
+
+As the end of prom approaches, $prom [[pulls you aside|p4.s11]] with a tentative smile. 
+</tw-passagedata><tw-passagedata pid="54" name="p4.s11" tags="" position="1482,1939" size="100,100">$prom says, &quot;Hey, tonight’s been really great. I’ve been wondering if you’d want to go back to my place and watch a movie together?&quot;
 
 How do you respond?
 Whoa, whoa, isn’t that going a bit fast? [[I don’t think we’re quite at Netflix and Chill just yet.|p4.s12]]
-Oh, wow, okay, sure. [[But we’re just going to watch a movie, right?|p4.s13]] </tw-passagedata><tw-passagedata pid="55" name="p4.s12" tags="" position="1479,2117" size="100,100">A look of slight surprise crosses $prom&#39;s face at your response. The gym may be dimly lit, but you can still tell that there is a bit embarrassment.
+Oh, wow, okay, sure. [[But we’re just going to watch a movie, right?|p4.s13]] </tw-passagedata><tw-passagedata pid="55" name="p4.s12" tags="" position="1479,2117" size="100,100">A look of slight surprise crosses $prom&#39;s face at your response. It may be dimly lit, but you can still tell that there is a bit embarrassment.
 
 $prom says, &quot;No, no, I really just want to hang out with you more. We don’t have to do anything you don’t want, promise.&quot;
 
 Aw, that did sound pretty sincere. [[Sure, why not?|p5.s1]]
-</tw-passagedata><tw-passagedata pid="56" name="p4.s13" tags="" position="1629,2117" size="100,100">$prom laughs nervously and nods in response. “Yes, of course. I’ll even let you pick, yeah?”
+Hmm, you are pretty tired from prom. [[Maybe next time?|p5.s1]]</tw-passagedata><tw-passagedata pid="56" name="p4.s13" tags="" position="1621,2115" size="100,100">$prom laughs nervously and nods in response. “Yes, of course. I’ll even let you pick, yeah?”
 
-Ooh yes, you have so many cool movies you’ll share with anyone willing to listen. [[Romantic movie night it is!|p5.s1]]</tw-passagedata><tw-passagedata pid="57" name="p4.s14" tags="" position="2364,1437" size="100,100">As the festivities begin winding down, you find yourself leaning against $prom, cuddling on one of the beach towels to warm up as the night is now in full swing. 
+Ooh yes, you have so many cool movies you’ll share with anyone willing to listen. [[Romantic movie night it is!|p5.s1]]
+Hmm, you are pretty tired from prom. [[Maybe next time?|p5.s1]]</tw-passagedata><tw-passagedata pid="57" name="p4.s14" tags="" position="2364,1437" size="100,100">As the festivities begin winding down, you find yourself leaning against $prom, cuddling on one of the beach towels to warm up as the night is now in full swing. 
 
 “Ey, I just got a text that Chad and Julie were crowned prom king and queen!” Emmerson proclaims as they swing their phone in the air.
 
-“Man, don’t drag that [[heteronormative|p4.h]] BS in here. I was having a really good time,” Nina/ retorts.
+“Man, don’t drag that &lt;&lt;link &quot;heteronormative&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Heteronormativity&quot;);
+    Dialog.wiki(&quot;Heteronormativity is the idea that being heterosexual is the default identity. This usually leads to LGBTQ+ identifying individuals having to come out to signify them going against this established societal norm. This assumption has also contributed to the marginalization of LGBTQ+ identities by othering them, or making these identities seem out of place in society.&quot;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt; BS in here. I was having a really good time,” Nina retorts.
 
 Emmerson replies, &quot;Says the person who just used the word man.&quot;
 
 Nina says, &quot;Dude- bro- argh, you know what I mean!&quot;
 
-Laughter spreads throughout the group at the friendly banter, but you find yourself contemplating Nina’s words.
+Laughter spreads throughout the group at the friendly banter, but you find yourself contemplating Nina’s words. Off to the side, you think you also hear someone grumble that they wished they had seen the event in-person instead of hearing it from someone who was there. For some, the FOMO is real.
+
 Wait, Nina, [[what do you mean?|p4.s15]]
 I mean, [[Nina does have a point though.|p4.s15]]
 </tw-passagedata><tw-passagedata pid="58" name="p4.s15" tags="" position="2507,1451" size="100,100">Nina says, &quot;Oh, well, the tradition is that we vote for a prom king and prom queen. It doesn’t include, like, gay and lesbian couples, y’know? When have you ever heard of queerness being celebrated at our school like that?&quot;
@@ -942,11 +1080,19 @@ You all watch [[the sun dip below the horizon|aro.p4.s14]].
 
 “Ey, I just got a text that Chad and Julie were crowned prom king and queen!” Emmerson proclaims as they swing their phone in the air.
 
-“Man, don’t drag that [[heteronormative|p4.h]] BS in here. I was having a really good time,” Nina/ retorts.
+“Man, don’t drag that &lt;&lt;link &quot;heteronormative&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Heteronormativity&quot;);
+    Dialog.wiki(&quot;Heteronormativity is the idea that being heterosexual is the default identity. This usually leads to LGBTQ+ identifying individuals having to come out to signify them going against this established societal norm. This assumption has also contributed to the marginalization of LGBTQ+ identities by othering them, or making these identities seem out of place in society.&quot;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt; BS in here. I was having a really good time,” Nina/ retorts.
 
 Emmerson replies, &quot;Says the person who just used the word man.&quot;
 
 Nina says, &quot;Dude- bro- argh, you know what I mean!&quot;
+
+Off to the side, you think you also hear someone grumble that they wished they had seen the event in-person instead of hearing it from someone who was there. For some, the FOMO is real.
 
 Laughter spreads throughout the group at the friendly banter, but you find yourself contemplating Nina’s words.
 Wait, Nina, [[what do you mean?|aro.p4.s15]]
@@ -980,7 +1126,12 @@ You laugh and spend time speculating which desserts have the highest price to vo
 
 “Ugh, I totally forgot to place my vote for that,” $prom says. Funnily enough, so did you.
 
-“Good,” Nina chimes in. “Don’t support that [[heteronormative|p4.h]] bullshit.” 
+“Good,” Nina chimes in. “Don’t support that &lt;&lt;link &quot;heteronormative&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Heteronormativity&quot;);
+    Dialog.wiki(&quot;Heteronormativity is the idea that being heterosexual is the default identity. This usually leads to LGBTQ+ identifying individuals having to come out to signify them going against this established societal norm. This assumption has also contributed to the marginalization of LGBTQ+ identities by othering them, or making these identities seem out of place in society.&quot;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt; bullshit.” 
 
 An interesting interjection. How do you respond? 
 [[What do you mean, Nina?|aro.p4.s9]]
@@ -993,4 +1144,342 @@ You nod in response as Nina smiles in a way that tells you this isn’t the firs
 
 Not too long after, the room erupts into applause and cheers as Chad, the football captain, and his girlfriend, Julia, take the stage to be crowned prom king and queen. Honestly, no one is surprised, but it’s hard not to be swept up in the glamour of it all. You and $prom join in on the celebration on the dance floor while Nina rolls their eyes and heads over to the food table with her date.
 
-As the end of prom approaches, you ask Nina and her date if they would want to come over to watch a movie. They agree and Carson drives all of you to your [[house.|p5.s1]]</tw-passagedata></tw-storydata>
+As the end of prom approaches, you ask Nina and her date if they would want to come over to watch a movie. They agree and Carson drives all of you to your [[house.|p5.s1]] Hopefully your parents won&#39;t notice that you got a little carried away . . .</tw-passagedata><tw-passagedata pid="68" name="Untitled Passage 1" tags="" position="1616.7999877929688,288.5" size="100,100">&lt;&lt;link &quot;Open dialog!&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Dialog&quot;);
+    Dialog.wiki(&quot;Text within the dialog window&quot;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="69" name="Untitled Passage 2" tags="" position="668,381" size="100,100">&lt;&lt;link &quot;Open dialog!&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Dialog&quot;);
+    Dialog.wiki(&quot;Text within the dialog window in the dialog window in the dialog window in the dialog window in the dialog window in the dialog window in the dialog window in the dialog window in the dialog window&quot;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="p2.s7" tags="" position="2083,825" size="100,100">At the senior class assembly, a small handful of teachers give what you think is supposed to be a crash course in sex ed right before prom. The experience is awkward, and aside from a few immature jokes to break the tension, it’s obvious that everyone is thoroughly uncomfortable. However, the basic message is clear: don’t have sex. But if you //have to have sex,// use a condom.
+
+The longest hour of your life later, you get [[a text from Nina.|p2.s8]]
+</tw-passagedata><tw-passagedata pid="71" name="p2.s8" tags="" position="2213,831" size="100,100">&lt;p align=&quot;center&quot;&gt;Nina 🤩❤️&lt;/p&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;omg, that was such a shitshow
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;yeah… i think i’m traumatised now
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;&lt;span id=&quot;typing2&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;&lt;&lt;replace &quot;#typing2&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;😂😂😂
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;&lt;span id=&quot;typing3&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#typing3&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;like honestly, did they really think that was going to work??? i’ve learned more from Googling
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;&lt;span id=&quot;typing4&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;&lt;&lt;replace &quot;#typing4&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;and ofc, unsurprisingly, they didn’t even acknowledge that gay &lt;&lt;link &quot;sex&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Sex&quot;);
+    Dialog.wiki(&quot;Sex is different for everyone! The established norm of PIV (penis-in-vagina) sex leaves out a lot of people who may not want to or can’t have this form of sex, and it’s important to acknowledge that. You have the right to define what sex is for you and whether or not you’re even interested in that.&quot;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt; exists
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 16s&gt;&gt;
+How do you want to reply?
+i mean, did you really expect [[a bunch of old dudes|p2.s9]] to know how to talk about that?
+
+[[truly unfortunate 😔|p2.s10]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="72" name="p2.s9" tags="" position="2138,981" size="100,100">&lt;p align=&quot;center&quot;&gt;Nina 🤩❤️&lt;/p&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;i mean, did you really expect a bunch of old dudes to know how to talk about that? 
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing2&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing2&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;lol true
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;&lt;span id=&quot;typing3&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;&lt;&lt;replace &quot;#typing3&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;i am just annoyed and angry that they made that shit MANDATORY
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;&lt;span id=&quot;typing4&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#typing4&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;anyways, do you know what you’re wearing to prom yet? i picked out my badass dress. it’s got bi &lt;&lt;link &quot;pride flag&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Pride Flags&quot;);
+    Dialog.wiki(&#39;Pride Flags are ways for members of the LGBTQ+ community to show off pride for their identity and solidarity with their communities. The general rainbow pride flag has also been used to signal allyship from those outside of the community and to signal welcoming spaces. For a non-exhaustive list of pride flags, check out this &lt;a href=&quot;https://en.wikipedia.org/wiki/LGBT_symbols&quot; target=&quot;_blank&quot;&gt;link!&lt;/a&gt;&#39;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;colors~ 🖤
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;&lt;span id=&quot;typing5&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;&lt;&lt;replace &quot;#typing5&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;ooh nice! i’m not sure yet but i’ve been looking 
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 16s&gt;&gt;&lt;span id=&quot;typing6&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 18s&gt;&gt;&lt;&lt;replace &quot;#typing6&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;well, you better figure it out soon bc [[prom’s tomorrow!|p3.s1]]
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="73" name="p2.s10" tags="" position="2288,981" size="100,100">&lt;p align=&quot;center&quot;&gt;Nina 🤩❤️&lt;/p&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;truly unfortunate 😔
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing2&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing2&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;really truly 😔
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 7s&gt;&gt;&lt;span id=&quot;typing3&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 8s&gt;&gt;&lt;&lt;replace &quot;#typing3&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;anyways, do you know what you’re wearing to prom yet? i picked out my badass dress. it’s got bi &lt;&lt;link &quot;pride flag&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Pride Flags&quot;);
+    Dialog.wiki(&#39;Pride Flags are ways for members of the LGBTQ+ community to show off pride for their identity and solidarity with their communities. The general rainbow pride flag has also been used to signal allyship from those outside of the community and to signal welcoming spaces. For a non-exhaustive list of pride flags, check out this &lt;a href=&quot;https://en.wikipedia.org/wiki/LGBT_symbols&quot; target=&quot;_blank&quot;&gt;link!&lt;/a&gt;&#39;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;colors~ 🖤
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;&lt;span id=&quot;typing5&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt;&lt;&lt;replace &quot;#typing5&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;ooh nice! i’m not sure yet but i’ve been looking 
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;&lt;span id=&quot;typing6&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;&lt;&lt;replace &quot;#typing6&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;well, you better figure it out soon bc [[prom’s tomorrow!|p3.s1]]
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="74" name="aro.2.1" tags="" position="606,545" size="100,100">You spend the next few weeks finishing up your assignments, getting a prom outfit, and making preparations for the big day. But first, there’s some mandatory [[senior class assembly|aro.p2.s2.1]] you have to go to before prom.</tw-passagedata><tw-passagedata pid="75" name="aro.p2.s2.1" tags="" position="770,547" size="100,100">At the senior class assembly, a small handful of teachers give what you think is supposed to be a crash course in sex ed right before prom. The experience is awkward, and aside from a few immature jokes to break the tension, it’s obvious that everyone is thoroughly uncomfortable. However, the basic message is clear: don’t have sex. But if you //have to have sex,// use a condom.
+
+The longest hour of your life later, you get [[a text from Nina.|aro.p2.s3.1]]
+</tw-passagedata><tw-passagedata pid="76" name="aro.p2.s3.1" tags="" position="770,697" size="100,100">&lt;p align=&quot;center&quot;&gt;Nina 🤩❤️&lt;/p&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing0&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing0&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;omg, that was such a shitshow
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;yeah… i think i’m traumatised now
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;&lt;span id=&quot;typing2&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;&lt;&lt;replace &quot;#typing2&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;😂😂😂
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;&lt;span id=&quot;typing3&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#typing3&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;like honestly, did they really think that was going to work??? i’ve learned more from Googling
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;&lt;span id=&quot;typing4&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;&lt;&lt;replace &quot;#typing4&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;and ofc, unsurprisingly, they didn’t even acknowledge that gay &lt;&lt;link &quot;sex&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Sex&quot;);
+    Dialog.wiki(&quot;Sex is different for everyone! The established norm of PIV (penis-in-vagina) sex leaves out a lot of people who may not want to or can’t have this form of sex, and it’s important to acknowledge that. You have the right to define what sex is for you and whether or not you’re even interested in that.&quot;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt; exists
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 16s&gt;&gt;
+How do you want to reply?
+i mean, did you really expect [[a bunch of old dudes|aro.p2.s3.2]] to know how to talk about that?
+
+[[truly unfortunate 😔|aro.p2.s3.3]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="77" name="aro.p2.s3.2" tags="" position="695,847" size="100,100">&lt;p align=&quot;center&quot;&gt;Nina 🤩❤️&lt;/p&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;i mean, did you really expect a bunch of old dudes to know how to talk about that? 
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing2&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing2&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;lol true
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;&lt;span id=&quot;typing3&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;&lt;&lt;replace &quot;#typing3&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;i am just annoyed and angry that they made that shit MANDATORY
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;&lt;span id=&quot;typing4&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#typing4&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;anyways, do you know what you’re wearing to prom yet? i picked out my badass dress. it’s got bi &lt;&lt;link &quot;pride flag&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Pride Flags&quot;);
+    Dialog.wiki(&#39;Pride Flags are ways for members of the LGBTQ+ community to show off pride for their identity and solidarity with their communities. The general rainbow pride flag has also been used to signal allyship from those outside of the community and to signal welcoming spaces. For a non-exhaustive list of pride flags, check out this &lt;a href=&quot;https://en.wikipedia.org/wiki/LGBT_symbols&quot; target=&quot;_blank&quot;&gt;link!&lt;/a&gt;&#39;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;colors~ 🖤
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;&lt;span id=&quot;typing5&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;&lt;&lt;replace &quot;#typing5&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;ooh nice! i’m not sure yet but i’ve been looking 
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 16s&gt;&gt;&lt;span id=&quot;typing6&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 18s&gt;&gt;&lt;&lt;replace &quot;#typing6&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;well, you better figure it out soon bc [[prom’s tomorrow!|aro.2]]
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="aro.p2.s3.3" tags="" position="845,847" size="100,100">&lt;p align=&quot;center&quot;&gt;Nina 🤩❤️&lt;/p&gt;
+&lt;&lt;timed 1s&gt;&gt;&lt;span id=&quot;typing1&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#typing1&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;truly unfortunate 😔
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s&gt;&gt;&lt;span id=&quot;typing2&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#typing2&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;really truly 😔
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 7s&gt;&gt;&lt;span id=&quot;typing3&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 8s&gt;&gt;&lt;&lt;replace &quot;#typing3&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;anyways, do you know what you’re wearing to prom yet? i picked out my badass dress. it’s got bi &lt;&lt;link &quot;pride flag&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    Dialog.setup(&quot;Pride Flags&quot;);
+    Dialog.wiki(&#39;Pride Flags are ways for members of the LGBTQ+ community to show off pride for their identity and solidarity with their communities. The general rainbow pride flag has also been used to signal allyship from those outside of the community and to signal welcoming spaces. For a non-exhaustive list of pride flags, check out this &lt;a href=&quot;https://en.wikipedia.org/wiki/LGBT_symbols&quot; target=&quot;_blank&quot;&gt;link!&lt;/a&gt;&#39;);
+    Dialog.open();
+  &lt;&lt;/script&gt;&gt;
+&lt;&lt;/link&gt;&gt;colors~ 🖤
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;&lt;span id=&quot;typing5&quot;&gt;&lt;div class=&quot;youtexting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 11s&gt;&gt;&lt;&lt;replace &quot;#typing5&quot;&gt;&gt;
+&lt;div class=&quot;youtexting&quot;&gt;ooh nice! i’m not sure yet but i’ve been looking 
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;&lt;span id=&quot;typing6&quot;&gt;&lt;div class=&quot;texting&quot;&gt;
+  &lt;div class=&quot;typing__dot1&quot; /&gt;
+  &lt;div class=&quot;typing__dot2&quot; /&gt;
+  &lt;div class=&quot;typing__dot3&quot; /&gt;
+&lt;/div&gt;&lt;/span&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;&lt;&lt;replace &quot;#typing6&quot;&gt;&gt;
+&lt;div class=&quot;texting&quot;&gt;well, you better figure it out soon bc [[prom’s tomorrow!|aro.2]]
+&lt;/div&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="79" name="e1.s2" tags="" position="1574.4000244140625,2339" size="100,100">On Monday, you hear from Nina that Grayson had an unpleasant post-prom experience. Apparently after texting you, they had called her to ask for advice and expressed their annoyance at your lack of help with their situation. Oh no, was there [[something else you could have done?|e1.s1]]
+
+&lt;&lt;if $aro == &quot;true&quot;&gt;&gt;Well, at least you had a good time hanging out with your friends.
+&lt;&lt;else&gt;&gt;
+	Well, at least you and $prom had a good time hanging out.
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="80" name="e1.s3" tags="" position="1862.4000244140625,2339.699951171875" size="100,100">On Monday, Grayson approaches you and thanks you for helping them out. Unfortunately, their date wasn’t being very receptive to what they wanted out of the night, but talking to you and Nina gave them the courage to stand firm. Nina eventually stopped by to rescue them from Andre’s house. Well, that’s a relief to hear.
+
+&lt;&lt;if $aro == &quot;true&quot;&gt;&gt;You had a good time hanging out with your friends. The night was super fun!
+&lt;&lt;else&gt;&gt;
+	You and $prom had a good time hanging out that night. Maybe this date will blossom into something more . . .
+&lt;&lt;/if&gt;&gt;
+
+What would&#39;ve happened if [[you told Grayson something different?|e1.s1]]
+</tw-passagedata></tw-storydata>
